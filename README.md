@@ -133,44 +133,65 @@ Visit:
 
 ### Creating project repository
 
-1
+![image](screenshot/1.PNG)
 
 ### Step 2:
 
 ### Creating project repository on github
 
-2
+![image](screenshot/2.PNG)
 
 ### Creating project github repository,  initializing and adding project structure
 
-3
+![image](screenshot/3.PNG)
 
 ### Pushing project file structure to github repository.
 
-4
+![image](screenshot/4.PNG)
 
-5
+![image](screenshot/5.PNG)
 
 ### Setting up AWS EC2 instance for app deployment
 
-6
+![image](screenshot/6.PNG)
 
 ### EC2 instance security setup
 
-7
+![image](screenshot/7.PNG)
 
 ### Setting up secrets
 
-8
+![image](screenshot/8.PNG)
 
 ### Connecting to ec2 instance via shh
 
-9
+![image](screenshot/9.PNG)
 ### installing docker on ec2
 
-10
+![image](screenshot/10.PNG)
 
-11
+![image](screenshot/11.PNG)
+
+### Push project to github repository to initiate our pipeline
+
+![image](screenshot/13.PNG)
+
+### Github Action successfully build, test, and deploy to dockerhub image registry and AWS Ec2 instance
+
+![image](screenshot/12.PNG)
+
+![image](screenshot/14.PNG)
+
+### Accessing our web applicant front and backend
+
+![image](screenshot/15.PNG)
+
+![image](screenshot/16.PNG)
+
+### Entire project structure
+
+![image](screenshot/17.PNG)
+
 
 
 
