@@ -193,6 +193,109 @@ Visit:
 ![image](screenshot/17.PNG)
 
 
+## Step-by-Step Checklist to Fix "Can't Access App on EC2"
+
+- Are the ports open in the EC2 Security Group?
+
+- Are the Docker containers actually running?
+
+### 1. SSH into your EC2 instance:
+`ssh -i mykey.pem ubuntu@<EC2_PUBLIC_IP>`
+
+### 2. Then run the command:
+`docker`
+
+### You should see something like:
+
+```
+CONTAINER ID   IMAGE               PORTS                    NAMES
+abc123...      ecommerce-api       0.0.0.0:3000->3000/tcp   ecommerce-api
+def456...      ecommerce-webapp    0.0.0.0:3001->3000/tcp   ecommerce-webapp
+
+```
+
+### 3. If they're not running, check logs:
+`docker logs ecommerce-api`
+`docker logs ecommerce-webapp`
+
+### 4. Try accessing via curl or browser
+`curl http://<EC2_PUBLIC_IP>:3000/products`
+
+### 5. Try accessing from EC2 itself
+
+`curl localhost:3000/products`
+
+### If this works, but your browser fails, it’s definitely a Security Group issue.
+
+### Visit:
+- Backend: http://<EC2_IP>:3000/products
+- Frontend: http://<EC2_IP>:3001
+
+
+## How to push to Github Repo but not Trigger Github Action
+
+
+## Option 1:
+
+### Push to a Different Branch
+`git checkout -b staging`
+`git push origin staging`
+
+## Option 2: 
+
+### Temporarily Disable the Workflow File
+### Rename the workflow file so GitHub ignores it:
+
+```
+mv .github/workflows/ci.yml .github/workflows/ci.yml.disabled
+git add .github/workflows/ci.yml.disabled
+git commit -m "Temporarily disable CI"
+git push origin main
+
+```
+
+### Re-enable later:
+
+```
+mv .github/workflows/ci.yml.disabled .github/workflows/ci.yml
+git add .github/workflows/ci.yml
+git commit -m "Re-enable CI"
+git push origin main
+
+```
+
+## Option 3:
+
+### Use [skip ci] in Commit Message Just add [skip ci] (or [ci skip]) in your commit message:
+
+`git commit -m "Update docs [skip ci]"`
+`git push origin main`
+### GitHub will not run any workflows for that commit.
+
+## Option 4: 
+
+### Disable Workflow from GitHub Settings
+- Go to your GitHub repo
+
+- Click Actions
+
+- Click the workflow name (e.g., CI/CD Pipeline for E-Commerce Project)
+
+- Click Disable workflow
+
+### You can enable it again later.
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
