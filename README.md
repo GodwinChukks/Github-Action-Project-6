@@ -137,9 +137,41 @@ Visit:
 
 ### Step 2:
 
-### Creating project github repository,  initializing and adding project structure
+### Creating project repository on github
 
 2
+
+### Creating project github repository,  initializing and adding project structure
+
+3
+
+### Pushing project file structure to github repository.
+
+4
+
+5
+
+### Setting up AWS EC2 instance for app deployment
+
+6
+
+### EC2 instance security setup
+
+7
+
+### Setting up secrets
+
+8
+
+### Connecting to ec2 instance via shh
+
+9
+### installing docker on ec2
+
+10
+
+11
+
 
 
 
